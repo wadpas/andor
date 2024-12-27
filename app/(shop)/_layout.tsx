@@ -9,7 +9,7 @@ function TabBarIcon(props: {
   return (
     <FontAwesome
       size={24}
-      style={{ color: '#f59e0b' }}
+      style={{ color: '#16a34a' }}
       {...props}
     />
   )
@@ -20,7 +20,7 @@ export default function ShopLayout() {
     <SafeAreaView className='flex-1'>
       <Tabs
         screenOptions={{
-          tabBarActiveTintColor: '#f59e0b',
+          tabBarActiveTintColor: '#16a34a',
           tabBarLabelStyle: {
             fontSize: 16,
           },
