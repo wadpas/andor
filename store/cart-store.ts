@@ -1,9 +1,10 @@
 import { create } from 'zustand'
+import { ImageSourcePropType } from 'react-native'
 
 type CartItemType = {
   id: number
   title: string
-  heroImage: string
+  image: ImageSourcePropType
   price: number
   quantity: number
   maxQuantity: number
@@ -47,15 +48,13 @@ export const useCartStore = create<CartState>((set, get) => ({
     set((state) => ({ items: state.items.filter((item) => item.id !== id) })),
 
   incrementItem: (id: number) =>
-    set((state) => {
-      return {
-        items: state.items.map((item) =>
-          item.id === id && item.quantity < item.maxQuantity
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        ),
-      }
-    }),
+    set((state) => ({
+      items: state.items.map((item) =>
+        item.id === id && item.quantity < item.maxQuantity
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      ),
+    })),
 
   decrementItem: (id: number) =>
     set((state) => ({
@@ -73,5 +72,6 @@ export const useCartStore = create<CartState>((set, get) => ({
     const { items } = get()
     return items.reduce((count, item) => count + item.quantity, 0)
   },
+
   resetCart: () => set({ items: initialCartItems }),
 }))
