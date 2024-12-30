@@ -20,7 +20,7 @@ export default function RootLayout() {
         />
         <Stack.Screen
           name='cart'
-          options={{ presentation: 'modal', title: 'Product' }}
+          options={{ presentation: 'modal', title: 'Shopping Cart' }}
         />
         <Stack.Screen
           name='auth'

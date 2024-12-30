@@ -1,25 +1,5 @@
 import { create } from 'zustand'
-import { ImageSourcePropType } from 'react-native'
-
-type CartItemType = {
-  id: number
-  title: string
-  image: ImageSourcePropType
-  price: number
-  quantity: number
-  maxQuantity: number
-}
-
-type CartState = {
-  items: CartItemType[]
-  addItem: (item: CartItemType) => void
-  removeItem: (id: number) => void
-  incrementItem: (id: number) => void
-  decrementItem: (id: number) => void
-  getTotalPrice: () => string
-  getItemCount: () => number
-  resetCart: () => void
-}
+import { CartItemType, CartState } from '@/assets/types/cart'
 
 const initialCartItems: CartItemType[] = []
 

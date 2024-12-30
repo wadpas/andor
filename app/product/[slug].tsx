@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
 import React, { useState } from 'react'
+import { View, Text, StyleSheet, Image } from 'react-native'
 import { Redirect, useLocalSearchParams, Stack } from 'expo-router'
 import { useToast } from 'react-native-toast-notifications'
 import { PRODUCTS } from '@/assets/products'
